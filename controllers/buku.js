@@ -34,9 +34,9 @@ exports.ambil_semua_buku = (req, res) => {
             })
         
         res.json({
-          "status": true,
-          "message": "Request sukses",
-          "data": datane
+            "status": true,
+            "message": "Request sukses",
+            "data": datane
         })
     })
 }

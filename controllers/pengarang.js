@@ -19,11 +19,8 @@ exports.ambil_semua_pengarang = (req, res) => {
                 "message": "Data tidak ditemukan"
             })
         else
-            res.json({
-                "status": true,
-                "message": "Request sukses",
-                "data": datane
-            })
+            var data_pengarang = JSON.parse(JSON.stringify(datane))
+            res.send(data_pengarang)
     })
 }
 
@@ -39,11 +36,8 @@ exports.ambil_satu_pengarang = (req, res) => {
                 "message": "Data tidak ditemukan"
             })
         else
-            res.json({
-                "status": true,
-                "message": "Request sukses",
-                "data": datane
-            })
+            var data_pengarang = JSON.parse(JSON.stringify(datane))
+            res.send(data_pengarang)
     })
 }
 
