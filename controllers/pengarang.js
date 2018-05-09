@@ -19,8 +19,13 @@ exports.ambil_semua_pengarang = (req, res) => {
                 "message": "Data tidak ditemukan"
             })
         else
-            var data_pengarang = JSON.parse(JSON.stringify(datane))
-            res.send(data_pengarang)
+            res.json({
+                "status": true,
+                "message": "Request sukses",
+                "data": datane
+            })
+    }).catch(err => {
+        console.log(err)
     })
 }
 
