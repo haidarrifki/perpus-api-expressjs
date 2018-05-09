@@ -25,23 +25,6 @@ exports.ambil_semua_pengarang = (req, res) => {
 }
 
 exports.ambil_satu_pengarang = (req, res) => {
-    Pengarang.findOne({
-        where: {
-            id: req.params.idpengarang
-        }
-    }).then(datane => {
-        if (datane == '' || datane == null)
-            res.status(401).json({
-                "status": false,
-                "message": "Data tidak ditemukan"
-            })
-        else
-            var data_pengarang = JSON.parse(JSON.stringify(datane))
-            res.send(data_pengarang)
-    })
-}
-
-exports.list_buku_pengarang = (req, res) => {
     Pengarang.findAll({
         attributes: {
             exclude: ['pengarang']

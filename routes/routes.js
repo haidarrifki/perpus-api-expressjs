@@ -24,7 +24,5 @@ module.exports = (app) => {
         .get(pengarang.ambil_satu_pengarang)
         .put(pengarang.update_pengarang)
         .delete(pengarang.hapus_pengarang)
-    
-    app.route('/listbuku/pengarang/:idpengarang')
-        .get(pengarang.list_buku_pengarang)
+        
 }
