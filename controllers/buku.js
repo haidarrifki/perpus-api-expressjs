@@ -27,17 +27,17 @@ exports.ambil_semua_buku = (req, res) => {
             }
         ]
     }).then(datane => {
-        if (datane == null)
+        if (datane == null || datane == '')
             res.status(401).json({
                 "status": false,
                 "message": "Data tidak ditemukan"
             })
-        
-        res.json({
-            "status": true,
-            "message": "Request sukses",
-            "data": datane
-        })
+        else
+            res.json({
+                "status": true,
+                "message": "Request sukses",
+                "data": datane
+            })
     })
 }
 
