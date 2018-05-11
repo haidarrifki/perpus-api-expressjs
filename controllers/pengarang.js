@@ -46,9 +46,22 @@ exports.ambil_satu_pengarang = (req, res) => {
         }
     }).then(datane => {
         if (datane == '' || datane == null)
-            res.status(401).json({
-                "status": false,
-                "message": "Data tidak ditemukan"
+            Pengarang.findOne({
+                where: {
+                    id: req.params.idpengarang
+                }
+            }).then(data => {
+                if (datane == '' || datane == null)
+                    res.json({
+                        "status": false,
+                        "message": "Data tidak ditemukan"
+                    })
+                else
+                    res.json({
+                        "status": true,
+                        "message": "Request sukses",
+                        "data": data
+                    })
             })
         else
             res.json({
