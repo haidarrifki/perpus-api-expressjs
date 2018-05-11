@@ -60,7 +60,7 @@ exports.ambil_satu_buku = (req, res) => {
             id: req.params.idbuku
         }
     }).then(datane => {
-        if (datane == null)
+        if (datane == null || datane == '')
             res.status(401).json({
                 "status": false,
                 "message": "Data tidak ditemukan"
@@ -69,7 +69,7 @@ exports.ambil_satu_buku = (req, res) => {
             res.json({
                 "status": true,
                 "message": "Request sukses",
-                "data": datane
+                "data": [datane]
             })
     })
 }

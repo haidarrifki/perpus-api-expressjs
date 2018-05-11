@@ -50,8 +50,8 @@ exports.ambil_satu_pengarang = (req, res) => {
                 where: {
                     id: req.params.idpengarang
                 }
-            }).then(data => {
-                if (datane == '' || datane == null)
+            }).then(datane => {
+                if (datane == null)
                     res.json({
                         "status": false,
                         "message": "Data tidak ditemukan"
@@ -60,7 +60,7 @@ exports.ambil_satu_pengarang = (req, res) => {
                     res.json({
                         "status": true,
                         "message": "Request sukses",
-                        "data": data
+                        "data": [datane]
                     })
             })
         else
