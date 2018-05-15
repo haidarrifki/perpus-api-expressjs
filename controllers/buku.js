@@ -50,10 +50,7 @@ exports.ambil_satu_buku = (req, res) => {
             {
                 model: Pengarang,
                 as: "penulis",
-                required: true,
-                attributes: {
-                    exclude: ['id']
-                }
+                required: true
             }
         ],
         where: {
